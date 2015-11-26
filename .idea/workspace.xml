@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="63f66a40-59c0-41c7-9b0c-f9410d102a3c" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/cs149/File.java" afterPath="$PROJECT_DIR$/src/com/cs149/File.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/cs149/Functions.java" afterPath="$PROJECT_DIR$/src/com/cs149/Functions.java" />
     </list>
     <ignored path="File_System.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -69,43 +69,43 @@
         <entry file="file://$PROJECT_DIR$/src/com/cs149/Directory.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="29" column="8" selection-start-line="29" selection-start-column="8" selection-end-line="29" selection-end-column="20" />
+              <caret line="19" column="48" selection-start-line="19" selection-start-column="48" selection-end-line="19" selection-end-column="48" />
               <folding>
-                <element signature="e#289#290#0" expanded="true" />
-                <element signature="e#321#322#0" expanded="true" />
-                <element signature="e#375#376#0" expanded="true" />
-                <element signature="e#421#422#0" expanded="true" />
-                <element signature="e#459#460#0" expanded="true" />
-                <element signature="e#493#494#0" expanded="true" />
-                <element signature="e#524#525#0" expanded="true" />
-                <element signature="e#551#552#0" expanded="true" />
-                <element signature="e#595#596#0" expanded="true" />
-                <element signature="e#628#629#0" expanded="true" />
-                <element signature="e#676#677#0" expanded="true" />
-                <element signature="e#710#711#0" expanded="true" />
+                <element signature="e#417#418#0" expanded="true" />
+                <element signature="e#449#450#0" expanded="true" />
+                <element signature="e#503#504#0" expanded="true" />
+                <element signature="e#549#550#0" expanded="true" />
+                <element signature="e#587#588#0" expanded="true" />
+                <element signature="e#621#622#0" expanded="true" />
+                <element signature="e#652#653#0" expanded="true" />
+                <element signature="e#679#680#0" expanded="true" />
+                <element signature="e#723#724#0" expanded="true" />
+                <element signature="e#756#757#0" expanded="true" />
+                <element signature="e#804#805#0" expanded="true" />
+                <element signature="e#838#839#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Functions.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Functions.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/cs149/Functions.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.6506024">
+              <caret line="18" column="8" selection-start-line="18" selection-start-column="8" selection-end-line="18" selection-end-column="8" />
               <folding>
-                <element signature="e#175#176#0" expanded="true" />
-                <element signature="e#222#223#0" expanded="true" />
+                <element signature="e#247#248#0" expanded="true" />
+                <element signature="e#296#297#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ProxyDisk.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ProxyDisk.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/cs149/ProxyDisk.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.18072289">
-              <caret line="5" column="22" selection-start-line="5" selection-start-column="22" selection-end-line="5" selection-end-column="22" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="5" column="39" selection-start-line="5" selection-start-column="39" selection-end-line="5" selection-end-column="39" />
               <folding />
             </state>
           </provider>
@@ -133,6 +133,7 @@
       <list>
         <option value="$PROJECT_DIR$/src/com/cs149/File.java" />
         <option value="$PROJECT_DIR$/src/com/cs149/Directory.java" />
+        <option value="$PROJECT_DIR$/src/com/cs149/ProxyDisk.java" />
         <option value="$PROJECT_DIR$/src/com/cs149/Functions.java" />
       </list>
     </option>
@@ -530,6 +531,35 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/cs149/Directory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="19" column="48" selection-start-line="19" selection-start-column="48" selection-end-line="19" selection-end-column="48" />
+          <folding>
+            <element signature="e#417#418#0" expanded="true" />
+            <element signature="e#449#450#0" expanded="true" />
+            <element signature="e#503#504#0" expanded="true" />
+            <element signature="e#549#550#0" expanded="true" />
+            <element signature="e#587#588#0" expanded="true" />
+            <element signature="e#621#622#0" expanded="true" />
+            <element signature="e#652#653#0" expanded="true" />
+            <element signature="e#679#680#0" expanded="true" />
+            <element signature="e#723#724#0" expanded="true" />
+            <element signature="e#756#757#0" expanded="true" />
+            <element signature="e#804#805#0" expanded="true" />
+            <element signature="e#838#839#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/cs149/ProxyDisk.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="5" column="39" selection-start-line="5" selection-start-column="39" selection-end-line="5" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/cs149/File.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -559,43 +589,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/cs149/Directory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="29" column="8" selection-start-line="29" selection-start-column="8" selection-end-line="29" selection-end-column="20" />
-          <folding>
-            <element signature="e#289#290#0" expanded="true" />
-            <element signature="e#321#322#0" expanded="true" />
-            <element signature="e#375#376#0" expanded="true" />
-            <element signature="e#421#422#0" expanded="true" />
-            <element signature="e#459#460#0" expanded="true" />
-            <element signature="e#493#494#0" expanded="true" />
-            <element signature="e#524#525#0" expanded="true" />
-            <element signature="e#551#552#0" expanded="true" />
-            <element signature="e#595#596#0" expanded="true" />
-            <element signature="e#628#629#0" expanded="true" />
-            <element signature="e#676#677#0" expanded="true" />
-            <element signature="e#710#711#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/cs149/Functions.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.6506024">
+          <caret line="18" column="8" selection-start-line="18" selection-start-column="8" selection-end-line="18" selection-end-column="8" />
           <folding>
-            <element signature="e#175#176#0" expanded="true" />
-            <element signature="e#222#223#0" expanded="true" />
+            <element signature="e#247#248#0" expanded="true" />
+            <element signature="e#296#297#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/cs149/ProxyDisk.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.18072289">
-          <caret line="5" column="22" selection-start-line="5" selection-start-column="22" selection-end-line="5" selection-end-column="22" />
-          <folding />
         </state>
       </provider>
     </entry>

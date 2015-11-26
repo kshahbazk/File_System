@@ -11,14 +11,11 @@ public class Functions {
 
     }
 
-    public static void currentd(Directory a)
-    {
-        System.out.println(a.getName());
+    public static void currentd(Directory dir) {
+        System.out.println(dir.getName());
     }
 
+    public static void changed(Directory currentdir, Directory newdir) {
 
-
-
-
-
+    }
 }
