@@ -11,7 +11,6 @@ public class File {
     private String permissions;
 
     public File () {
-
     }
 
     public int getSize() {
