@@ -10,6 +10,10 @@ public class File {
     private int Size;
     private String permissions;
 
+    public File () {
+
+    }
+
     public int getSize() {
         return Size;
     }
