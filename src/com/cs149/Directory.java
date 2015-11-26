@@ -15,6 +15,8 @@ public class Directory {
 
     public Directory() {
 
+        // Initialize with Read/Write permissions
+        permissions="Read/Write";
     }
 
     // The setters and getters for the Directory
