@@ -24,4 +24,8 @@ public class ProxyDisk {
     {
         System.out.println(current.getName());
     }
+
+    public void chdir(Directory newdir) {
+        current = newdir;
+    }
 }
