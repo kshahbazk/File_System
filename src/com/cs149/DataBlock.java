@@ -14,4 +14,12 @@ public class DataBlock {
 	   public int getNumber(){
 		   return number;
 	   }
+	   
+	   public int getData(){
+		   return data;
+	   }
+	   
+	   public void setData(int data){
+		   this.data = data;
+	   }
 }

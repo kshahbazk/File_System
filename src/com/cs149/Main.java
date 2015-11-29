@@ -5,6 +5,8 @@ import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.Scanner;
 
+import javax.swing.text.AbstractDocument.Content;
+
 public class Main {
 
     private String User;
@@ -302,7 +304,18 @@ public class Main {
      * */
 
     public static void movf(String file, String dir){
+    	ArrayList<Object> contents = current.getContents();
     	
+    	if(contents.contains(file)){
+	    	for(int i = 0; i < contents.size(); i++){
+	    		if(contents.get(i).equals(dir)){
+	    			contents.remove(i);
+	    			chdir(dir);
+	    			current.addToDirectory(file);
+	    			return;
+	    		}
+	    	}
+    	}else{System.out.println("File not found");}
     }
 
 	/*
@@ -322,7 +335,9 @@ public class Main {
      *  Implemented by Benjamin Liu
      * */
     public static void dumpfs(){
-    	
+    	for(int i = 0; i < proxyDisk.size(); i++){
+    		System.out.println(proxyDisk.get(i).getData());
+    	}
     }
 
 

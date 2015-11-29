@@ -46,6 +46,10 @@ public class Directory {
     public void deleteFromDirectory(Object a) {
         contents.remove(a);
     }
+    
+    public ArrayList<Object> getContents(){
+    	return contents;
+    }
 
 
 }
