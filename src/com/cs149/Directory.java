@@ -6,13 +6,14 @@ import java.util.Objects;
 /**
  * Created by shahbazkhan on 11/25/15.
  *
- *  This is DataStructure which is mimicing a Directory on a file System
+ *  This is DataStructure which is mimicking a Directory on a file System
  *
  */
 public class Directory {
     private String name;
     private String permissions;
     private ArrayList<Object> contents;
+    private String type;
 
     public Directory(String name) {
 

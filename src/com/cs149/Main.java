@@ -188,7 +188,15 @@ public class Main {
      * */
 
 	public static void chdir(String directory){
-		 current.setName(directory);
+		ArrayList<Object> contents = current.getContents();
+
+        for(Object x: contents)
+        {
+            if (x.getClass().getTypeName()=="Directory")
+            {
+
+            }
+        }
 	 }
 
     
@@ -347,6 +355,9 @@ public class Main {
      *  Implemented by Shahbaz Khan
      * */
 	public static void formatd(){
+     proxyDisk.clear();
+		Directory root = new Directory("root");
+        current.addToDirectory(root);
 
 	}
     
