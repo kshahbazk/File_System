@@ -13,10 +13,11 @@ public class Directory {
     private String permissions;
     private ArrayList<Object> contents;
 
-    public Directory() {
+    public Directory(String name) {
 
         // Initialize with Read/Write permissions
         permissions="Read/Write";
+        this.name = name;
     }
 
     // The setters and getters for the Directory
