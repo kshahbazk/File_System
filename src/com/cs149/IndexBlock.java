@@ -15,4 +15,12 @@ public class IndexBlock {
 		      this.number = number;
 		      this.ptrDataBlocks = ptrDataBlocks;
 		   }
+	
+	public ArrayList<DataBlock> getDataBlocks(){
+		return ptrDataBlocks;
+	}
+	
+	public void setDataBlocks(ArrayList<DataBlock> dbs){
+		ptrDataBlocks = dbs;
+	}
 }
