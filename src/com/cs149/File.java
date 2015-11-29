@@ -4,13 +4,17 @@ package com.cs149;
  * Created by shahbazkhan on 11/25/15.
  */
 public class File {
-    private String Name;
+    private String name;
     private String Type;
     private String Owner;
     private int Size;
     private String permissions;
 
-    public File () {
+    public File (String name) {
+        this.name = name;
+        // Initialize with Read/Write permissions
+        permissions="Read/Write";
+
     }
 
     public int getSize() {
@@ -18,7 +22,7 @@ public class File {
     }
 
     public String getName() {
-        return Name;
+        return this.name;
     }
 
     public String getOwner() {
@@ -34,7 +38,7 @@ public class File {
     }
 
     public void setName(String name) {
-        Name = name;
+        this.name = name;
     }
 
     public void setOwner(String owner) {

@@ -11,6 +11,7 @@ public class ProxyDisk {
 
     private Directory current;
     private ArrayList<Object> disk;
+    private ArrayList<DataBlock> proxy;
 
     public ProxyDisk ()
     {

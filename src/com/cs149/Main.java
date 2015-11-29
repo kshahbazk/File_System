@@ -6,6 +6,7 @@ import java.util.LinkedList;
 
 public class Main {
 
+    private String User;
 
 	public static HashMap<String, IndexBlock> map = new HashMap<String, IndexBlock>();
 	
@@ -34,6 +35,16 @@ public class Main {
     public void currentd(){
     	System.out.println(current.getName());
     }
+
+	 /*
+     * 2. chdir directory - change current directory to "directory"
+     * Implemented by Shahbaz Khan
+     * */
+
+	public void chdir(String directory){
+		 current.setName(directory);
+	 }
+
     
     /*
      * 3. maked dname - creates a directory called "name" 
@@ -44,6 +55,16 @@ public class Main {
     	Directory dir = new Directory(dname);
     	current.addToDirectory(dir);
     }
+
+	 /*
+     * createf file - creates a file called "file" (allocates space, name, permissions etc)
+     * Implemented by Shahbaz Khan
+     * */
+
+	public void createf(String file){
+		File f = new File(file);
+		current.addToDirectory(f);
+	}
     
     /*
      * 5.extendf file size - make "file" extended by "size" bytes
