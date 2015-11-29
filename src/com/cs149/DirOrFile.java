@@ -6,16 +6,16 @@ import java.util.Objects;
 /**
  * Created by shahbazkhan on 11/25/15.
  *
- *  This is DataStructure which is mimicking a Directory on a file System
+ *  This is DataStructure which is mimicking a DirOrFile on a file System
  *
  */
-public class Directory {
+public class DirOrFile {
     private String name;
     private String permissions;
     private ArrayList<Object> contents;
     private String type;
 
-    public Directory(String name) {
+    public DirOrFile(String name) {
 
         contents = new ArrayList<>();
         // Initialize with Read/Write permissions
@@ -23,7 +23,7 @@ public class Directory {
         this.name = name;
     }
 
-    // The setters and getters for the Directory
+    // The setters and getters for the DirOrFile
     public void setName(String name) {
         this.name = name;
     }

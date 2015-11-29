@@ -5,8 +5,6 @@ import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.Scanner;
 
-import javax.swing.text.AbstractDocument.Content;
-
 public class Main {
 
     private String User;
@@ -19,11 +17,15 @@ public class Main {
 	public static LinkedList<DataBlock> unusedDataBlocks = new LinkedList<DataBlock>();
 	
 	public static LinkedList<IndexBlock> unusedIndexBlocks = new LinkedList<IndexBlock>();
-	
-	public static Directory current = new Directory("root");
+
+
+    public static DirectoryOrFile<String> current = new DirectoryOrFile<String>("");
+
+    public static DirectoryOrFile<String> root = new DirectoryOrFile<String>("root");
 	
     public static void main(String[] args) {
 
+        current=root;
     	//Initialize our Proxy Disk
     	for(int i = 0; i < 100; i++){
     		proxyDisk.add(new DataBlock(i));
@@ -188,15 +190,15 @@ public class Main {
      * */
 
 	public static void chdir(String directory){
-		ArrayList<Object> contents = current.getContents();
-
-        for(Object x: contents)
-        {
-            if (x.getClass().getTypeName()=="Directory")
-            {
-
-            }
-        }
+//		ArrayList<Object> contents = current.getContents();
+//
+//        for(Object x: contents)
+//        {
+//            if (x.getClass().getTypeName()=="DirOrFile")
+//            {
+//
+//            }
+//        }
 	 }
 
     
@@ -206,8 +208,8 @@ public class Main {
      * */
     
     public static void maked(String dname){
-    	Directory dir = new Directory(dname);
-    	current.addToDirectory(dir);
+//    	DirOrFile dir = new DirOrFile(dname);
+//    	current.addToDirectory(dir);
     }
 
 	 /*
@@ -216,8 +218,8 @@ public class Main {
      * */
 
 	public static void createf(String file){
-		File f = new File(file);
-		current.addToDirectory(f);
+//		File f = new File(file);
+//		current.addToDirectory(f);
 	}
     
     /*
@@ -257,21 +259,21 @@ public class Main {
      * Implemented by Benjamin Liu
      * */
     public static void deletefd (String name){
-    	//Remove file from directory
-    	current.deleteFromDirectory(name);
-    	
-    	IndexBlock iblock = map.get(name);
-    	//Add iblock to list of free iblocks
-    	unusedIndexBlocks.add(iblock);
-    	
-    	ArrayList<DataBlock> datablocks = iblock.getDataBlocks();
-    	
-    	for(int i = 0; i < datablocks.size(); i++){
-    		//Add datablocks to list of free datablocks
-    		unusedDataBlocks.add(datablocks.get(i));
-    	}
-    	
-    	map.remove(name);
+//    	//Remove file from directory
+//    	current.deleteFromDirectory(name);
+//
+//    	IndexBlock iblock = map.get(name);
+//    	//Add iblock to list of free iblocks
+//    	unusedIndexBlocks.add(iblock);
+//
+//    	ArrayList<DataBlock> datablocks = iblock.getDataBlocks();
+//
+//    	for(int i = 0; i < datablocks.size(); i++){
+//    		//Add datablocks to list of free datablocks
+//    		unusedDataBlocks.add(datablocks.get(i));
+//    	}
+//
+//    	map.remove(name);
     }
 
 	/*
@@ -313,18 +315,18 @@ public class Main {
      * */
 
     public static void movf(String file, String dir){
-    	ArrayList<Object> contents = current.getContents();
-    	
-    	if(contents.contains(file)){
-	    	for(int i = 0; i < contents.size(); i++){
-	    		if(contents.get(i).equals(dir)){
-	    			contents.remove(i);
-	    			chdir(dir);
-	    			current.addToDirectory(file);
-	    			return;
-	    		}
-	    	}
-    	}else{System.out.println("File not found");}
+//    	ArrayList<Object> contents = current.getContents();
+//
+//    	if(contents.contains(file)){
+//	    	for(int i = 0; i < contents.size(); i++){
+//	    		if(contents.get(i).equals(dir)){
+//	    			contents.remove(i);
+//	    			chdir(dir);
+//	    			current.addToDirectory(file);
+//	    			return;
+//	    		}
+//	    	}
+//    	}else{System.out.println("File not found");}
     }
 
 	/*
@@ -355,9 +357,9 @@ public class Main {
      *  Implemented by Shahbaz Khan
      * */
 	public static void formatd(){
-     proxyDisk.clear();
-		Directory root = new Directory("root");
-        current.addToDirectory(root);
+//     proxyDisk.clear();
+//		DirOrFile root = new DirOrFile("root");
+//        current.addToDirectory(root);
 
 	}
     

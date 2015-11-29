@@ -9,7 +9,7 @@ import java.util.ArrayList;
  */
 public class ProxyDisk {
 
-    private Directory current;
+    private DirOrFile current;
     private ArrayList<Object> disk;
     private ArrayList<DataBlock> proxy;
 
@@ -26,7 +26,7 @@ public class ProxyDisk {
         System.out.println(current.getName());
     }
 
-    public void chdir(Directory newdir) {
+    public void chdir(DirOrFile newdir) {
         current = newdir;
     }
 }

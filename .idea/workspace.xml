@@ -2,12 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="63f66a40-59c0-41c7-9b0c-f9410d102a3c" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/File_System/com/cs149/DataBlock.class" afterPath="$PROJECT_DIR$/out/production/File_System/com/cs149/DataBlock.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/File_System/com/cs149/Directory.class" afterPath="$PROJECT_DIR$/out/production/File_System/com/cs149/Directory.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/File_System/com/cs149/Main.class" afterPath="$PROJECT_DIR$/out/production/File_System/com/cs149/Main.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/cs149/Directory.java" afterPath="$PROJECT_DIR$/src/com/cs149/Directory.java" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/cs149/Directory.java" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/cs149/Main.java" afterPath="$PROJECT_DIR$/src/com/cs149/Main.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/cs149/ProxyDisk.java" afterPath="$PROJECT_DIR$/src/com/cs149/ProxyDisk.java" />
     </list>
     <ignored path="File_System.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -33,15 +30,16 @@
         <entry file="file://$PROJECT_DIR$/src/com/cs149/Main.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="196" column="0" selection-start-line="196" selection-start-column="0" selection-end-line="196" selection-end-column="0" />
+              <caret line="28" column="37" selection-start-line="28" selection-start-column="37" selection-end-line="28" selection-end-column="37" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#289#309#0" expanded="true" />
-                <element signature="e#376#387#0" expanded="true" />
-                <element signature="e#463#474#0" expanded="true" />
-                <element signature="e#552#564#0" expanded="true" />
-                <element signature="e#4557#4558#0" expanded="true" />
-                <element signature="e#4607#4608#0" expanded="true" />
+                <element signature="e#238#258#0" expanded="true" />
+                <element signature="e#325#336#0" expanded="true" />
+                <element signature="e#412#423#0" expanded="true" />
+                <element signature="e#501#513#0" expanded="true" />
+                <element signature="e#627#638#0" expanded="true" />
+                <element signature="e#4571#4572#0" expanded="true" />
+                <element signature="e#4621#4622#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -91,11 +89,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Directory.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/cs149/Directory.java">
+      <file leaf-file-name="DirOrFile.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/com/cs149/DirOrFile.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="11" column="24" selection-start-line="11" selection-start-column="24" selection-end-line="11" selection-end-column="24" />
+            <state vertical-scroll-proportion="0.33280507">
+              <caret line="14" column="3" selection-start-line="14" selection-start-column="3" selection-end-line="14" selection-end-column="39" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#628#629#0" expanded="true" />
@@ -113,10 +111,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Node.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Node.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/cs149/Node.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.28846154">
+            <state vertical-scroll-proportion="0.0">
               <caret line="8" column="112" selection-start-line="8" selection-start-column="112" selection-end-line="8" selection-end-column="112" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -172,9 +170,10 @@
         <option value="$PROJECT_DIR$/src/com/cs149/DataBlock.java" />
         <option value="$PROJECT_DIR$/src/com/cs149/ProxyDisk.java" />
         <option value="$PROJECT_DIR$/src/com/cs149/File.java" />
-        <option value="$PROJECT_DIR$/src/com/cs149/Main.java" />
         <option value="$PROJECT_DIR$/src/com/cs149/Directory.java" />
         <option value="$PROJECT_DIR$/src/com/cs149/Node.java" />
+        <option value="$PROJECT_DIR$/src/com/cs149/DirOrFile.java" />
+        <option value="$PROJECT_DIR$/src/com/cs149/Main.java" />
       </list>
     </option>
   </component>
@@ -547,10 +546,10 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32776934" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32776934" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3262519" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3262519" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15611193" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32928678" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -590,12 +589,13 @@
           <caret line="13" column="4" selection-start-line="13" selection-start-column="4" selection-end-line="13" selection-end-column="4" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#289#309#0" expanded="true" />
-            <element signature="e#376#387#0" expanded="true" />
-            <element signature="e#463#474#0" expanded="true" />
-            <element signature="e#552#564#0" expanded="true" />
-            <element signature="e#4557#4558#0" expanded="true" />
-            <element signature="e#4607#4608#0" expanded="true" />
+            <element signature="e#238#258#0" expanded="true" />
+            <element signature="e#325#336#0" expanded="true" />
+            <element signature="e#412#423#0" expanded="true" />
+            <element signature="e#501#513#0" expanded="true" />
+            <element signature="e#627#638#0" expanded="true" />
+            <element signature="e#4571#4572#0" expanded="true" />
+            <element signature="e#4621#4622#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -638,7 +638,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/cs149/Directory.java">
+    <entry file="file://$PROJECT_DIR$/src/com/cs149/DirOrFile.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="18" column="33" selection-start-line="18" selection-start-column="33" selection-end-line="18" selection-end-column="33" />
@@ -672,12 +672,13 @@
           <caret line="13" column="4" selection-start-line="13" selection-start-column="4" selection-end-line="13" selection-end-column="4" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#289#309#0" expanded="true" />
-            <element signature="e#376#387#0" expanded="true" />
-            <element signature="e#463#474#0" expanded="true" />
-            <element signature="e#552#564#0" expanded="true" />
-            <element signature="e#4557#4558#0" expanded="true" />
-            <element signature="e#4607#4608#0" expanded="true" />
+            <element signature="e#238#258#0" expanded="true" />
+            <element signature="e#325#336#0" expanded="true" />
+            <element signature="e#412#423#0" expanded="true" />
+            <element signature="e#501#513#0" expanded="true" />
+            <element signature="e#627#638#0" expanded="true" />
+            <element signature="e#4571#4572#0" expanded="true" />
+            <element signature="e#4621#4622#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -720,7 +721,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/cs149/Directory.java">
+    <entry file="file://$PROJECT_DIR$/src/com/cs149/DirOrFile.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="17" column="49" selection-start-line="17" selection-start-column="49" selection-end-line="17" selection-end-column="49" />
@@ -754,12 +755,13 @@
           <caret line="13" column="4" selection-start-line="13" selection-start-column="4" selection-end-line="13" selection-end-column="4" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#289#309#0" expanded="true" />
-            <element signature="e#376#387#0" expanded="true" />
-            <element signature="e#463#474#0" expanded="true" />
-            <element signature="e#552#564#0" expanded="true" />
-            <element signature="e#4557#4558#0" expanded="true" />
-            <element signature="e#4607#4608#0" expanded="true" />
+            <element signature="e#238#258#0" expanded="true" />
+            <element signature="e#325#336#0" expanded="true" />
+            <element signature="e#412#423#0" expanded="true" />
+            <element signature="e#501#513#0" expanded="true" />
+            <element signature="e#627#638#0" expanded="true" />
+            <element signature="e#4571#4572#0" expanded="true" />
+            <element signature="e#4621#4622#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -802,7 +804,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/cs149/Directory.java">
+    <entry file="file://$PROJECT_DIR$/src/com/cs149/DirOrFile.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="17" column="49" selection-start-line="17" selection-start-column="49" selection-end-line="17" selection-end-column="49" />
@@ -846,22 +848,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/cs149/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="196" column="0" selection-start-line="196" selection-start-column="0" selection-end-line="196" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#289#309#0" expanded="true" />
-            <element signature="e#376#387#0" expanded="true" />
-            <element signature="e#463#474#0" expanded="true" />
-            <element signature="e#552#564#0" expanded="true" />
-            <element signature="e#4557#4558#0" expanded="true" />
-            <element signature="e#4607#4608#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/cs149/File.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -892,29 +878,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/cs149/Directory.java">
+    <entry file="file://$PROJECT_DIR$/src/com/cs149/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="11" column="24" selection-start-line="11" selection-start-column="24" selection-end-line="11" selection-end-column="24" />
+          <caret line="28" column="37" selection-start-line="28" selection-start-column="37" selection-end-line="28" selection-end-column="37" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#628#629#0" expanded="true" />
-            <element signature="e#660#661#0" expanded="true" />
-            <element signature="e#714#715#0" expanded="true" />
-            <element signature="e#760#761#0" expanded="true" />
-            <element signature="e#934#935#0" expanded="true" />
-            <element signature="e#967#968#0" expanded="true" />
-            <element signature="e#1016#1017#0" expanded="true" />
-            <element signature="e#1050#1051#0" expanded="true" />
-            <element signature="e#1099#1100#0" expanded="true" />
-            <element signature="e#1127#1128#0" expanded="true" />
+            <element signature="e#238#258#0" expanded="true" />
+            <element signature="e#325#336#0" expanded="true" />
+            <element signature="e#412#423#0" expanded="true" />
+            <element signature="e#501#513#0" expanded="true" />
+            <element signature="e#627#638#0" expanded="true" />
+            <element signature="e#4571#4572#0" expanded="true" />
+            <element signature="e#4621#4622#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/cs149/Node.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.28846154">
+        <state vertical-scroll-proportion="0.0">
           <caret line="8" column="112" selection-start-line="8" selection-start-column="112" selection-end-line="8" selection-end-column="112" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -931,6 +914,26 @@
             <element signature="e#1197#1198#0" expanded="true" />
             <element signature="e#1370#1371#0" expanded="true" />
             <element signature="e#1404#1405#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/cs149/DirOrFile.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33280507">
+          <caret line="14" column="3" selection-start-line="14" selection-start-column="3" selection-end-line="14" selection-end-column="39" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#628#629#0" expanded="true" />
+            <element signature="e#660#661#0" expanded="true" />
+            <element signature="e#714#715#0" expanded="true" />
+            <element signature="e#760#761#0" expanded="true" />
+            <element signature="e#934#935#0" expanded="true" />
+            <element signature="e#967#968#0" expanded="true" />
+            <element signature="e#1016#1017#0" expanded="true" />
+            <element signature="e#1050#1051#0" expanded="true" />
+            <element signature="e#1099#1100#0" expanded="true" />
+            <element signature="e#1127#1128#0" expanded="true" />
           </folding>
         </state>
       </provider>
