@@ -247,7 +247,9 @@ public class Main {
      *  Implemented by Benjamin Liu
      * */
     public static void dumpfs(){
-    	
+    	for(int i = 0; i < proxyDisk.size(); i++){
+    		System.out.println(proxyDisk.get(i).getData());
+    	}
     }
     
 }
