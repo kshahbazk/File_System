@@ -3,10 +3,12 @@ package com.cs149;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.LinkedList;
+import java.util.Scanner;
 
 public class Main {
 
     private String User;
+
 
 	public static HashMap<String, IndexBlock> map = new HashMap<String, IndexBlock>();
 	
@@ -16,23 +18,88 @@ public class Main {
 	
 	public static LinkedList<IndexBlock> unusedIndexBlocks = new LinkedList<IndexBlock>();
 	
-	public Directory current = new Directory("root");
+	public static Directory current = new Directory("root");
 	
     public static void main(String[] args) {
 
-    	//Set-up
+    	//Initialize our Proxy Disk
     	for(int i = 0; i < 100; i++){
     		proxyDisk.add(new DataBlock(i));
     	}
-    	
+
+		String typing= "";
+		System.out.println("Enter your command or enter quit to exit");
+		Scanner sc = new Scanner(System.in);
+        Boolean on = true;
+		while(sc.hasNextLine() && on){
+
+			typing = sc.nextLine();
+
+			if (typing.contains("currentd")) {
+				currentd();
+			}
+
+			if (typing.contains("chdir")) {
+
+				int indexOfEmptyString = typing.indexOf(" ");
+				String command = typing.substring(indexOfEmptyString);
+				chdir(command);
+			}
+
+			if (typing.contains("maked")) {
+				int indexOfEmptyString = typing.indexOf(" ");
+				String command = typing.substring(indexOfEmptyString);
+				maked(command);
+			}
+
+			if (typing.contains("createf")) {
+				int indexOfEmptyString = typing.indexOf(" ");
+				String command = typing.substring(indexOfEmptyString);
+				createf(command);
+			}
+
+			if (typing.contains("extendf")) {
+				int indexOfEmptyString = typing.indexOf(" ");
+				String firstCommandLine = typing.substring(indexOfEmptyString);
+
+				//createf(firstCommand);
+			}
+
+			if (typing.equals("quit")) {
+
+				on = false;
+			}
+
+//			if (typing.contains("currentd")) {
+//				currentd();
+//			}
+//
+//			if (typing.contains("currentd")) {
+//				currentd();
+//			}
+//
+//			if (typing.contains("currentd")) {
+//				currentd();
+//			}
+//
+//			if (typing.contains("currentd")) {
+//				currentd();
+//			}
+
+		}
+		System.out.println("System is off");
     }
+
+
+
+
     
     /*
      * 1. currentd - report name of current directory
      * Implemented by Benjamin Liu
      * */
     
-    public void currentd(){
+    public static void currentd(){
     	System.out.println(current.getName());
     }
 
@@ -41,7 +108,7 @@ public class Main {
      * Implemented by Shahbaz Khan
      * */
 
-	public void chdir(String directory){
+	public static void chdir(String directory){
 		 current.setName(directory);
 	 }
 
@@ -51,7 +118,7 @@ public class Main {
      * Implemented by Benjamin Liu
      * */
     
-    public void maked(String dname){
+    public static void maked(String dname){
     	Directory dir = new Directory(dname);
     	current.addToDirectory(dir);
     }
@@ -61,7 +128,7 @@ public class Main {
      * Implemented by Shahbaz Khan
      * */
 
-	public void createf(String file){
+	public static void createf(String file){
 		File f = new File(file);
 		current.addToDirectory(f);
 	}
@@ -70,7 +137,7 @@ public class Main {
      * 5.extendf file size - make "file" extended by "size" bytes
      * Implemented by Benjamin Liu
      * */
-    public void extendf(String file, int size){
+    public static void extendf(String file, int size){
     	
     	IndexBlock iblock = map.get(file);
     	ArrayList<DataBlock> datablocks = iblock.getDataBlocks();
@@ -92,7 +159,7 @@ public class Main {
      * 7. deletefd name - delete file or directory with the given name
      * Implemented by Benjamin Liu
      * */
-    public void deletefd (String name){
+    public static void deletefd (String name){
     	//Remove file from directory
     	current.deleteFromDirectory(name);
     	
@@ -115,7 +182,7 @@ public class Main {
      *  Implemented by Benjamin Liu
      * */
     
-    public void listf(String file){
+    public static void listf(String file){
     	IndexBlock iblock = map.get(file);
     	ArrayList<DataBlock> dataBlocks = iblock.getDataBlocks();
     	
@@ -128,7 +195,7 @@ public class Main {
      * 11. movf file directory - move "file" from current directory to "directory"
      *  Implemented by Benjamin Liu
      * */
-    public void movf(String file, Directory dir){
+    public static void movf(String file, Directory dir){
     	
     }
     
@@ -136,7 +203,7 @@ public class Main {
      * dumpfs - print out contents of proxy disk
      *  Implemented by Benjamin Liu
      * */
-    public void dumpfs(){
+    public static void dumpfs(){
     	
     }
     

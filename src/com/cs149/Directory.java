@@ -1,6 +1,7 @@
 package com.cs149;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 /**
  * Created by shahbazkhan on 11/25/15.
@@ -15,6 +16,7 @@ public class Directory {
 
     public Directory(String name) {
 
+        contents = new ArrayList<>();
         // Initialize with Read/Write permissions
         permissions="Read/Write";
         this.name = name;
