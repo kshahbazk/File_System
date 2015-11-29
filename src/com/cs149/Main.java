@@ -59,10 +59,40 @@ public class Main {
 			}
 
 			if (typing.contains("extendf")) {
-				int indexOfEmptyString = typing.indexOf(" ");
-				String firstCommandLine = typing.substring(indexOfEmptyString);
+				int indexOfFirstEmptyString = typing.indexOf(" ");
+				String firstCommandLine = typing.substring(indexOfFirstEmptyString);
+				int indexOfSecondEmptyString = firstCommandLine.indexOf(" ");
+				String firstCommand = typing.substring(indexOfFirstEmptyString, indexOfSecondEmptyString);
+				String secondCommandStr = typing.substring(indexOfSecondEmptyString);
+				int secondCommand = Integer.parseInt(secondCommandStr);
 
-				//createf(firstCommand);
+				extendf(firstCommand,secondCommand);
+			}
+
+			if (typing.contains("deletefd")) {
+				int indexOfEmptyString = typing.indexOf(" ");
+				String command = typing.substring(indexOfEmptyString);
+				deletefd(command);
+			}
+
+			if (typing.contains("listf")) {
+				int indexOfEmptyString = typing.indexOf(" ");
+				String command = typing.substring(indexOfEmptyString);
+				listf(command);
+			}
+
+			if (typing.contains("movf")) {
+				int indexOfFirstEmptyString = typing.indexOf(" ");
+				String firstCommandLine = typing.substring(indexOfFirstEmptyString);
+				int indexOfSecondEmptyString = firstCommandLine.indexOf(" ");
+				String firstCommand = typing.substring(indexOfFirstEmptyString, indexOfSecondEmptyString);
+				String secondCommand = typing.substring(indexOfSecondEmptyString);
+
+				movf(firstCommand,secondCommand);
+			}
+
+			if (typing.contains("dumpfs")) {
+				dumpfs();
 			}
 
 			if (typing.equals("quit")) {
@@ -195,7 +225,7 @@ public class Main {
      * 11. movf file directory - move "file" from current directory to "directory"
      *  Implemented by Benjamin Liu
      * */
-    public static void movf(String file, Directory dir){
+    public static void movf(String file, String dir){
     	
     }
     
