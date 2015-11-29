@@ -1,11 +1,14 @@
 package com.cs149;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.LinkedList;
 
 public class Main {
 
-	public ArrayList<Directory> systemDirectory = new ArrayList<Directory>();
+	public HashMap<String, IndexBlock> map = new HashMap<String, IndexBlock>();
+	
+	public ArrayList<DataBlock> proxyDisk = new ArrayList<DataBlock>();
 	
 	public LinkedList<DataBlock> unusedDataBlocks = new LinkedList<DataBlock>();
 	
