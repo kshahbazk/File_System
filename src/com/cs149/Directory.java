@@ -41,7 +41,7 @@ public class Directory {
          contents.add(a);
      }
 
-    public void deleteFromDirectoy(Object a) {
+    public void deleteFromDirectory(Object a) {
         contents.remove(a);
     }
 

@@ -6,9 +6,13 @@ import java.util.LinkedList;
 
 public class Main {
 
+
 	public static HashMap<String, IndexBlock> map = new HashMap<String, IndexBlock>();
+	
 	public static ArrayList<DataBlock> proxyDisk = new ArrayList<DataBlock>();
+	
 	public static LinkedList<DataBlock> unusedDataBlocks = new LinkedList<DataBlock>();
+	
 	public static LinkedList<IndexBlock> unusedIndexBlocks = new LinkedList<IndexBlock>();
 	
 	public Directory current = new Directory("root");
@@ -68,15 +72,19 @@ public class Main {
      * Implemented by Benjamin Liu
      * */
     public void deletefd (String name){
+    	//Remove file from directory
+    	current.deleteFromDirectory(name);
+    	
     	IndexBlock iblock = map.get(name);
+    	//Add iblock to list of free iblocks
+    	unusedIndexBlocks.add(iblock);
+    	
     	ArrayList<DataBlock> datablocks = iblock.getDataBlocks();
     	
     	for(int i = 0; i < datablocks.size(); i++){
+    		//Add datablocks to list of free datablocks
     		unusedDataBlocks.add(datablocks.get(i));
     	}
-    	
-    	current.deleteFromDirectoy(name);
-    	unusedIndexBlocks.add(iblock);
     	
     	map.remove(name);
     }
