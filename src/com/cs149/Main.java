@@ -20,11 +20,20 @@ public class Main {
     }
     
     /*
-     * 1. currentd
+     * 1. currentd - report name of current directory
      * Implemented by Benjamin Liu
      * */
     
     public void currentd(){
     	System.out.println(current.getName());
+    }
+    
+    /*
+     * 3. maked dname - creates a directory called "name" 
+     * Implemented by Benjamin Liu
+     * */
+    
+    public void maked(String dname){
+    	
     }
 }
