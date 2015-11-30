@@ -8,7 +8,7 @@ public class IndexBlock {
 	private int number;
 	private ArrayList<DataBlock> ptrDataBlocks = new ArrayList<>();
 
-	public IndexBlock(int data, IndexBlock next, int number, ArrayList<DataBlock> ptrDataBlocks)
+	public IndexBlock(int number)
 		   {
 		      this.data = data;
 		      this.next = next;

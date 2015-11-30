@@ -30,11 +30,11 @@ public class Main {
 		// Initialize our Proxy Disk
 		for (int i = 0; i < 100; i++) {
 			proxyDisk.add(new DataBlock(i));
-			unusedDataBlocks.add(proxyDisk.get(0));
+			unusedIndexBlocks.add(new IndexBlock(i));
+			unusedDataBlocks.add(proxyDisk.get(i));
 		}
 
 		prompt();
-
 	}
 
 	/*
