@@ -1,9 +1,6 @@
 package com.cs149;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.LinkedList;
-import java.util.Scanner;
+import java.util.*;
 
 public class Main {
 
@@ -175,6 +172,21 @@ public class Main {
 	 */
 	public static void listd(String directory) {
 
+        if(fileSystem.exists(new FileSystemNode(directory))){
+            FileSystemNode<String> toList = fileSystem.find(new FileSystemNode(directory));
+            List<FileSystemNode<String>> children = toList.getChildren();
+            for(FileSystemNode<String> child : children){
+                System.out.println(child.getData());
+            }
+        }
+        else {
+            List<FileSystemNode<String>> children = current.getChildren();
+            for(FileSystemNode<String> child : children){
+                System.out.println(child.getData());
+            }
+        }
+
+
 	}
 
 	/*
@@ -243,9 +255,11 @@ public class Main {
 	 * by Shahbaz Khan
 	 */
 	public static void formatd() {
-		// proxyDisk.clear();
-		// DirOrFile root = new DirOrFile("root");
-		// current.addToDirectory(root);
+        FileSystem<String> newfileSystem = new FileSystem<String>();
+        FileSystemNode<String> newroot = new FileSystemNode<>("root");
+        newfileSystem.setRoot(newroot);
+        current=newroot;
+        fileSystem = newfileSystem;
 
 	}
 	
