@@ -115,12 +115,14 @@ public class Main {
 		if (current.getData().equals("root")) {
             toAdd.setOwner(owner);
             toAdd.setType("File");
+            toAdd.setName(file);
 			root.addChild(toAdd);
 		}
         else
         {
             toAdd.setType("File");
             toAdd.setOwner(owner);
+            toAdd.setName(file);
             current.addChild(toAdd);
 
             if(!fileSystem.exists(current)){
@@ -144,7 +146,6 @@ public class Main {
 		iblock.setDataBlocks(datablocks);
 		updateProxyDisk(datablocks);
 		map.put(file, iblock);
-		System.out.println(file);
 		
 		unusedIndexBlocks.remove(0);
 	}
@@ -193,10 +194,17 @@ public class Main {
 	 */
 	public static void deletefd(String name) {
 		// //Remove file from directory
-		// current.deleteFromDirectory(name);
 		
 		if(map.containsKey(name)){
 		
+		//FileSystemNode<String> toDel = new FileSystemNode<>(name);
+		List<FileSystemNode<String>> ls = current.getChildren();
+		for(int i = 0; i < ls.size(); i++){
+			if(ls.get(i).getName().equals(name)){
+				current.removeChildAt(i);
+			}
+		}
+			
 		 IndexBlock iblock = map.get(name);
 		 //Add iblock to list of free iblocks
 		 unusedIndexBlocks.add(iblock);
@@ -251,6 +259,7 @@ public class Main {
 		for (int i = 0; i < dataBlocks.size(); i++) {
 			System.out.print(dataBlocks.get(i).getNumber() + " ");
 		}
+		System.out.println("");
 	}
 
 	/*
@@ -268,18 +277,11 @@ public class Main {
 	 */
 
 	public static void movf(String file, String dir) {
-		// ArrayList<Object> contents = current.getContents();
-		//
-		// if(contents.contains(file)){
-		// for(int i = 0; i < contents.size(); i++){
-		// if(contents.get(i).equals(dir)){
-		// contents.remove(i);
-		// chdir(dir);
-		// current.addToDirectory(file);
-		// return;
-		// }
-		// }
-		// }else{System.out.println("File not found");}
+		
+		deletefd(file);
+		chdir(dir);
+		createf(file);
+		
 	}
 
 	/*

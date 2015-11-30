@@ -20,6 +20,7 @@ public class FileSystemNode<T> {
     private String Owner;
     private int Size = 300;
     private String permissions;
+    private String name;
 
     public FileSystemNode() {
         super();
@@ -110,7 +111,9 @@ public class FileSystemNode<T> {
         return Size;
     }
 
-
+    public String getName(){
+    	return name;
+    }
 
     public String getOwner() {
         return Owner;
@@ -138,5 +141,9 @@ public class FileSystemNode<T> {
 
     public void setType(String type) {
         Type = type;
+    }
+    
+    public void setName(String name){
+    	this.name = name;
     }
 }
