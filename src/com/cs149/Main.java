@@ -11,9 +11,9 @@ public class Main {
 	public static FileSystemNode<String> root = new FileSystemNode<>("root");
 
 	public static FileSystemNode<String> current = new FileSystemNode<>("");
-
+	
 	public static HashMap<String, IndexBlock> map = new HashMap<String, IndexBlock>();
-
+	
 	public static ArrayList<DataBlock> proxyDisk = new ArrayList<DataBlock>();
 
 	public static LinkedList<DataBlock> unusedDataBlocks = new LinkedList<DataBlock>();
@@ -108,8 +108,6 @@ public class Main {
 
 	public static void createf(String file) {
 		
-		//TODO  add file to directory
-		
         FileSystemNode<String> toAdd = new FileSystemNode<>(file);
 
 		if (current.getData().equals("root")) {
@@ -193,12 +191,12 @@ public class Main {
 	 * Implemented by Benjamin Liu
 	 */
 	public static void deletefd(String name) {
-		// //Remove file from directory
 		
+		//Check if file exists
 		if(map.containsKey(name)){
-		
-		//FileSystemNode<String> toDel = new FileSystemNode<>(name);
+		//Get everything in the directory	
 		List<FileSystemNode<String>> ls = current.getChildren();
+		//Search for the file
 		for(int i = 0; i < ls.size(); i++){
 			if(ls.get(i).getName().equals(name)){
 				current.removeChildAt(i);
@@ -387,8 +385,11 @@ public class Main {
 
 			// 8
 			else if (typing.contains("listd")) {
-	
+				try{
 				listd(input[1]);
+				}catch(Exception e){
+					listd(current.getData());
+				}
 			}
 
 			// 9
