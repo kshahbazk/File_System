@@ -120,12 +120,12 @@ public class Main {
 		IndexBlock iblock = unusedIndexBlocks.get(0);
 		ArrayList<DataBlock> datablocks = new ArrayList<>();
 		
-		int numBlocks = ( 300 / DataBlock.size) + 1;
+		int numBlocks = ( toAdd.getSize() / DataBlock.size);
 		
 		for(int i = 0; i < numBlocks; i++){
 			datablocks.add(unusedDataBlocks.get(i));
 			//Write to datablock
-			datablocks.get(i).setData(12345);
+			datablocks.get(i).setData(i);
 			unusedDataBlocks.remove(i);
 		}
 		iblock.setDataBlocks(datablocks);
@@ -149,7 +149,7 @@ public class Main {
 
 			datablocks.add(unusedDataBlocks.get(i));
 			//Write to datablock
-			datablocks.get(i).setData(12345);
+			datablocks.get(i).setData(i);
 			unusedDataBlocks.remove(i);
 
 		}
@@ -176,6 +176,8 @@ public class Main {
 		// //Remove file from directory
 		// current.deleteFromDirectory(name);
 		
+		if(map.containsKey(name)){
+		
 		 IndexBlock iblock = map.get(name);
 		 //Add iblock to list of free iblocks
 		 unusedIndexBlocks.add(iblock);
@@ -184,10 +186,14 @@ public class Main {
 		
 		for(int i = 0; i < datablocks.size(); i++){
 		//Add datablocks to list of free datablocks
+		datablocks.get(i).setData(0);
 		unusedDataBlocks.add(datablocks.get(i));
 		}
-		
+		updateProxyDisk(datablocks);
 	    map.remove(name);
+		}else{
+			System.out.println("File not found");
+		}
 	}
 
 	/*
@@ -255,6 +261,7 @@ public class Main {
 	 * 13. dumpfs - print out contents of proxy disk Implemented by Benjamin Liu
 	 */
 	public static void dumpfs() {
+		//System.out.println(proxyDisk.get(1).getData());
 		for (int i = 0; i < proxyDisk.size(); i++) {
 			System.out.println(proxyDisk.get(i).getData() + " ");
 		}
@@ -318,14 +325,11 @@ public class Main {
 
 			// 5
 			else if (typing.contains("extendf")) {
-				int indexOfFirstEmptyString = typing.indexOf(" ");
-				String firstCommandLine = typing.substring(indexOfFirstEmptyString);
-				int indexOfSecondEmptyString = firstCommandLine.indexOf(" ");
-				String firstCommand = typing.substring(indexOfFirstEmptyString, indexOfSecondEmptyString);
-				String secondCommandStr = typing.substring(indexOfSecondEmptyString);
-				int secondCommand = Integer.parseInt(secondCommandStr);
-
-				extendf(firstCommand, secondCommand);
+				
+				String[] pp = typing.split("\\s+");
+				System.out.println(pp[1]);
+				int j = Integer.parseInt(pp[2]);
+				extendf(pp[1], j);
 			}
 
 			// 6

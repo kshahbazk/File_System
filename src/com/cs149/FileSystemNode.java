@@ -18,7 +18,7 @@ public class FileSystemNode<T> {
     public List<FileSystemNode<T>> children;
     private String Type;
     private String Owner;
-    private int Size;
+    private int Size = 300;
     private String permissions;
 
     public FileSystemNode() {
