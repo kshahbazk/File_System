@@ -135,19 +135,19 @@ public class Main {
 	public static void deletefd(String name) {
 		// //Remove file from directory
 		// current.deleteFromDirectory(name);
-		//
-		// IndexBlock iblock = map.get(name);
-		// //Add iblock to list of free iblocks
-		// unusedIndexBlocks.add(iblock);
-		//
-		// ArrayList<DataBlock> datablocks = iblock.getDataBlocks();
-		//
-		// for(int i = 0; i < datablocks.size(); i++){
-		// //Add datablocks to list of free datablocks
-		// unusedDataBlocks.add(datablocks.get(i));
-		// }
-		//
-		// map.remove(name);
+		
+		 IndexBlock iblock = map.get(name);
+		 //Add iblock to list of free iblocks
+		 unusedIndexBlocks.add(iblock);
+		
+		 ArrayList<DataBlock> datablocks = iblock.getDataBlocks();
+		
+		for(int i = 0; i < datablocks.size(); i++){
+		//Add datablocks to list of free datablocks
+		unusedDataBlocks.add(datablocks.get(i));
+		}
+		
+	    map.remove(name);
 	}
 
 	/*
@@ -352,8 +352,8 @@ public class Main {
 				on = false;
 				return;
 			}
-			System.out.println("System is off");
 		}
+		System.out.println("System is off");
 	}
 
 }
