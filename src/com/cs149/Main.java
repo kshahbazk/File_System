@@ -67,9 +67,24 @@ public class Main {
 	 */
 
 	public static void maked(String dname) {
+
+        FileSystemNode<String> toAdd = new FileSystemNode<>(dname);
+
 		if (current.getData().equals("root")) {
-			root.addChild(new FileSystemNode<>(dname));
+            toAdd.setOwner(owner);
+            toAdd.setType("Directory");
+			root.addChild(toAdd);
 		}
+        else
+        {
+            toAdd.setType("Directory");
+            toAdd.setOwner(owner);
+            current.addChild(toAdd);
+
+            if(!fileSystem.exists(current)){
+                root.addChild(current);
+            }
+        }
 
 	}
 
