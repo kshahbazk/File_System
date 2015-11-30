@@ -7,7 +7,7 @@ public class File {
     private String name;
     private String Type;
     private String Owner;
-    private int Size;
+    private int Size = 300;
     private int numBlocks;
     private String permissions;
 
