@@ -94,15 +94,35 @@ public class Main {
 		
 		//TODO  add file to directory
 		
-		File f = new File(file);
-		f.setOwner(owner);
+        FileSystemNode<String> toAdd = new FileSystemNode<>(file);
+
+		if (current.getData().equals("root")) {
+            toAdd.setOwner(owner);
+            toAdd.setType("File");
+			root.addChild(toAdd);
+		}
+        else
+        {
+            toAdd.setType("File");
+            toAdd.setOwner(owner);
+            current.addChild(toAdd);
+
+            if(!fileSystem.exists(current)){
+                root.addChild(current);
+            }
+        }
+
+		
+		
 		IndexBlock iblock = unusedIndexBlocks.get(0);
 		ArrayList<DataBlock> datablocks = new ArrayList<>();
 		
-		int numBlocks = (f.getSize() / DataBlock.size) + 1;
+		int numBlocks = ( 300 / DataBlock.size) + 1;
 		
 		for(int i = 0; i < numBlocks; i++){
 			datablocks.add(unusedDataBlocks.get(i));
+			//Write to datablock
+			datablocks.get(i).setData(12345);
 			unusedDataBlocks.remove(i);
 		}
 		iblock.setDataBlocks(datablocks);
@@ -125,6 +145,8 @@ public class Main {
 		for (int i = 0; i < amountOfBlocks; i++) {
 
 			datablocks.add(unusedDataBlocks.get(i));
+			//Write to datablock
+			datablocks.get(i).setData(12345);
 			unusedDataBlocks.remove(i);
 
 		}
@@ -287,7 +309,7 @@ public class Main {
 			}
 
 			// 2
-			if (typing.contains("chdir")) {
+			else if (typing.contains("chdir")) {
 
 				int indexOfEmptyString = typing.indexOf(" ");
 				String command = typing.substring(indexOfEmptyString);
@@ -295,21 +317,21 @@ public class Main {
 			}
 
 			// 3
-			if (typing.contains("maked")) {
+			else if (typing.contains("maked")) {
 				int indexOfEmptyString = typing.indexOf(" ");
 				String command = typing.substring(indexOfEmptyString);
 				maked(command);
 			}
 
 			// 4
-			if (typing.contains("createf")) {
+			else if (typing.contains("createf")) {
 				int indexOfEmptyString = typing.indexOf(" ");
 				String command = typing.substring(indexOfEmptyString);
 				createf(command);
 			}
 
 			// 5
-			if (typing.contains("extendf")) {
+			else if (typing.contains("extendf")) {
 				int indexOfFirstEmptyString = typing.indexOf(" ");
 				String firstCommandLine = typing.substring(indexOfFirstEmptyString);
 				int indexOfSecondEmptyString = firstCommandLine.indexOf(" ");
@@ -321,7 +343,7 @@ public class Main {
 			}
 
 			// 6
-			if (typing.contains("truncf")) {
+			else if (typing.contains("truncf")) {
 				int indexOfFirstEmptyString = typing.indexOf(" ");
 				String firstCommandLine = typing.substring(indexOfFirstEmptyString);
 				int indexOfSecondEmptyString = firstCommandLine.indexOf(" ");
@@ -333,35 +355,35 @@ public class Main {
 			}
 
 			// 7
-			if (typing.contains("deletefd")) {
+			else if (typing.contains("deletefd")) {
 				int indexOfEmptyString = typing.indexOf(" ");
 				String command = typing.substring(indexOfEmptyString);
 				deletefd(command);
 			}
 
 			// 8
-			if (typing.contains("listd")) {
+			else if (typing.contains("listd")) {
 				int indexOfEmptyString = typing.indexOf(" ");
 				String command = typing.substring(indexOfEmptyString);
 				listd(command);
 			}
 
 			// 9
-			if (typing.contains("listf")) {
+			else if (typing.contains("listf")) {
 				int indexOfEmptyString = typing.indexOf(" ");
 				String command = typing.substring(indexOfEmptyString);
 				listf(command);
 			}
 
 			// 10
-			if (typing.contains("sizef")) {
+			else if (typing.contains("sizef")) {
 				int indexOfEmptyString = typing.indexOf(" ");
 				String command = typing.substring(indexOfEmptyString);
 				sizef(command);
 			}
 
 			// 11
-			if (typing.contains("movf")) {
+			else if (typing.contains("movf")) {
 				int indexOfFirstEmptyString = typing.indexOf(" ");
 				String firstCommandLine = typing.substring(indexOfFirstEmptyString);
 				int indexOfSecondEmptyString = firstCommandLine.indexOf(" ");
@@ -372,25 +394,30 @@ public class Main {
 			}
 
 			// 12
-			if (typing.contains("listfb")) {
+			else if (typing.contains("listfb")) {
 				listfb();
 			}
 
 			// 13
-			if (typing.contains("dumpfs")) {
+			else if (typing.contains("dumpfs")) {
 				dumpfs();
 			}
 
 			// 14
-			if (typing.contains("formatd")) {
+			else if (typing.contains("formatd")) {
 				formatd();
 			}
 
 			// Quit
-			if (typing.equals("quit")) {
+			else if (typing.equals("quit")) {
 
 				on = false;
 				return;
+			}else{
+				
+				System.out.println("Command not found");
+				prompt();
+				
 			}
 		}
 		System.out.println("System is off");
