@@ -191,7 +191,7 @@ public class Main {
 
             for (int i = 0; i < amountOfBlocks; i++) {
 
-                datablocks.remove(unusedDataBlocks.get(i));
+                datablocks.remove(i);
                 //Write to datablock
                 datablocks.get(i).setData(i);
                 unusedDataBlocks.get(i);
