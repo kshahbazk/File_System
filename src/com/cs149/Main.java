@@ -26,6 +26,8 @@ public class Main {
 	
     public static void main(String[] args) {
 
+
+         fileSystem.setRoot(root);
          current=root;
     	//Initialize our Proxy Disk
     	for(int i = 0; i < 100; i++){
