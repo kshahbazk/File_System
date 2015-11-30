@@ -185,7 +185,28 @@ public class Main {
 	 */
 
 	public static void truncf(String file, int size) {
+        if(map.containsKey(file)){
+            IndexBlock iblock = map.get(file);
+            ArrayList<DataBlock> datablocks = iblock.getDataBlocks();
 
+            int amountOfBlocks = size / DataBlock.size;
+
+            for (int i = 0; i < amountOfBlocks; i++) {
+
+                datablocks.add(unusedDataBlocks.get(i));
+                //Write to datablock
+                datablocks.get(i).setData(i);
+                unusedDataBlocks.remove(i);
+
+            }
+
+            iblock.setDataBlocks(datablocks);
+            updateProxyDisk(datablocks);
+            map.put(file, iblock);
+
+        }else{
+            System.out.println("File not found");
+        }
 	}
 
 	/*
@@ -296,13 +317,20 @@ public class Main {
 	}
 
 	/*
-	 * 13. dumpfs - print out contents of proxy disk Implemented by Benjamin Liu
+	 * 13. dumpfs - print out contents of proxy disk Implemented by Shahbaz Khan
 	 */
 	public static void dumpfs() {
-		//System.out.println(proxyDisk.get(1).getData());
-		for (int i = 0; i < proxyDisk.size(); i++) {
-			System.out.println(proxyDisk.get(i).getData() + " ");
-		}
+        // Get all contents root on down.
+
+        List<FileSystemNode<String>> allcontent = new ArrayList<FileSystemNode<String>>();
+
+        allcontent = fileSystem.build(FileSystemTraversal.PRE_ORDER);
+
+        for (FileSystemNode content: allcontent)
+        {
+            System.out.println(content.getData());
+        }
+
 	}
 
 	/*
