@@ -83,6 +83,23 @@ public class Main {
             }
         }
 
+        IndexBlock iblock = unusedIndexBlocks.get(0);
+        ArrayList<DataBlock> datablocks = new ArrayList<>();
+
+        int numBlocks = ( 300 / DataBlock.size) + 1;
+
+        for(int i = 0; i < numBlocks; i++){
+            datablocks.add(unusedDataBlocks.get(i));
+            //Write to datablock
+            datablocks.get(i).setData(12345);
+            unusedDataBlocks.remove(i);
+        }
+        iblock.setDataBlocks(datablocks);
+        updateProxyDisk(datablocks);
+        map.put(dname, iblock);
+
+        unusedDataBlocks.remove(0);
+
 	}
 
 	/*
