@@ -218,12 +218,14 @@ public class Main {
 		//Get everything in the directory	
 		List<FileSystemNode<String>> ls = current.getChildren();
 		//Search for the file
+		if(ls.size() > 0){
 		for(int i = 0; i < ls.size(); i++){
 			if(ls.get(i).getName().equals(name)){
 				current.removeChildAt(i);
 			}
 		}
 			
+		}
 		 IndexBlock iblock = map.get(name);
 		 //Add iblock to list of free iblocks
 		 unusedIndexBlocks.add(iblock);
@@ -303,7 +305,6 @@ public class Main {
 		createf(file);
 		
 	}
-
 	/*
 	 * 12. listfb - list addresses (array index) if free blocks Implemented by
 	 * Benjamin Liu
