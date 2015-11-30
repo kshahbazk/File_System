@@ -287,8 +287,14 @@ public class Main {
 	 */
 
 	public static void sizef(String file) {
+
+        FileSystemNode<String> toSize = new FileSystemNode<>(file);
+        if(fileSystem.exists(toSize)) {
+             toSize = fileSystem.find(toSize);
+        }
+
 		IndexBlock iblock = map.get(file);
-		System.out.println("size: "+ current.getSize() + " blocks: " + iblock.getDataBlocks().size());
+		System.out.println("size: "+ toSize.getSize() + " blocks: " + iblock.getDataBlocks().size());
 	}
 
 	/*
