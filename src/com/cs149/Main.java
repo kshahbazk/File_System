@@ -191,10 +191,10 @@ public class Main {
 
             for (int i = 0; i < amountOfBlocks; i++) {
 
-                datablocks.add(unusedDataBlocks.get(i));
+                datablocks.remove(unusedDataBlocks.get(i));
                 //Write to datablock
                 datablocks.get(i).setData(i);
-                unusedDataBlocks.remove(i);
+                unusedDataBlocks.get(i);
 
             }
 
