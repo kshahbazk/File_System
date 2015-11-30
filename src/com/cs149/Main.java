@@ -287,7 +287,8 @@ public class Main {
 	 */
 
 	public static void sizef(String file) {
-
+		IndexBlock iblock = map.get(file);
+		System.out.println("size: "+ current.getSize() + " blocks: " + iblock.getDataBlocks().size());
 	}
 
 	/*
