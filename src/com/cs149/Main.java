@@ -7,8 +7,7 @@ import java.util.Scanner;
 
 public class Main {
 
-    private String User;
-
+    private String Owner = "admin";
 
     public static FileSystem<String> fileSystem = new FileSystem<String>();
 
@@ -200,12 +199,11 @@ public class Main {
 
 	 /*
      * 4. createf file - creates a file called "file" (allocates space, name, permissions etc)
-     * Implemented by Shahbaz Khan
+     * Implemented by Benjamin Liu
      * */
 
 	public static void createf(String file){
-//		File f = new File(file);
-//		current.addToDirectory(f);
+		File f = new File(file);
 	}
     
     /*

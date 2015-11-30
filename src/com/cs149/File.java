@@ -8,6 +8,7 @@ public class File {
     private String Type;
     private String Owner;
     private int Size;
+    private int numBlocks;
     private String permissions;
 
     public File (String name) {
@@ -55,5 +56,13 @@ public class File {
 
     public void setType(String type) {
         Type = type;
+    }
+    
+    public int getNumBlocks(){
+    	return numBlocks;
+    }
+    
+    public void setNumBlocks(int num){
+    	this.numBlocks = num;
     }
 }
