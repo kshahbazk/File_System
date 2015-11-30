@@ -10,6 +10,12 @@ public class Main {
     private String User;
 
 
+    public static FileSystem<String> fileSystem = new FileSystem<String>();
+
+    public static FileSystemNode<String> root = new FileSystemNode<>("root");
+
+    public static FileSystemNode<String> current = new FileSystemNode<>("");
+
 	public static HashMap<String, IndexBlock> map = new HashMap<String, IndexBlock>();
 	
 	public static ArrayList<DataBlock> proxyDisk = new ArrayList<DataBlock>();
@@ -18,14 +24,11 @@ public class Main {
 	
 	public static LinkedList<IndexBlock> unusedIndexBlocks = new LinkedList<IndexBlock>();
 
-
-    public static DirectoryOrFile<String> current = new DirectoryOrFile<String>("");
-
-    public static DirectoryOrFile<String> root = new DirectoryOrFile<String>("root");
 	
     public static void main(String[] args) {
 
-        current=root;
+        fileSystem.setRoot(root);
+         current=root;
     	//Initialize our Proxy Disk
     	for(int i = 0; i < 100; i++){
     		proxyDisk.add(new DataBlock(i));
@@ -151,22 +154,6 @@ public class Main {
 				return;
 			}
 
-//			if (typing.contains("currentd")) {
-//				currentd();
-//			}
-//
-//			if (typing.contains("currentd")) {
-//				currentd();
-//			}
-//
-//			if (typing.contains("currentd")) {
-//				currentd();
-//			}
-//
-//			if (typing.contains("currentd")) {
-//				currentd();
-//			}
-
 		}
 		System.out.println("System is off");
     }
@@ -181,7 +168,7 @@ public class Main {
      * */
     
     public static void currentd(){
-    	System.out.println(current.getName());
+    	System.out.println(current.getData());
     }
 
 	 /*
@@ -189,16 +176,14 @@ public class Main {
      * Implemented by Shahbaz Khan
      * */
 
-	public static void chdir(String directory){
-//		ArrayList<Object> contents = current.getContents();
-//
-//        for(Object x: contents)
-//        {
-//            if (x.getClass().getTypeName()=="DirOrFile")
-//            {
-//
-//            }
-//        }
+	public static void chdir(String directory) {
+
+        if (fileSystem.exists(new FileSystemNode<>(directory))) {
+
+            current = fileSystem.find(new FileSystemNode(directory));
+
+        }
+
 	 }
 
     
@@ -208,8 +193,10 @@ public class Main {
      * */
     
     public static void maked(String dname){
-//    	DirOrFile dir = new DirOrFile(dname);
-//    	current.addToDirectory(dir);
+      if (current.getData().equals("root")){
+          root.addChild(new FileSystemNode<>(dname));
+        }
+
     }
 
 	 /*
