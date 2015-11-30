@@ -27,7 +27,6 @@ public class Main {
 	
     public static void main(String[] args) {
 
-        fileSystem.setRoot(root);
          current=root;
     	//Initialize our Proxy Disk
     	for(int i = 0; i < 100; i++){
@@ -189,7 +188,7 @@ public class Main {
     
     /*
      * 3. maked dname - creates a directory called "name" 
-     * Implemented by Benjamin Liu
+     * Implemented by Shahbaz Khan
      * */
     
     public static void maked(String dname){
