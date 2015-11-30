@@ -21,6 +21,6 @@ public class IndexBlock {
 	}
 	
 	public void setDataBlocks(ArrayList<DataBlock> dbs){
-		ptrDataBlocks = dbs;
+		ptrDataBlocks = new ArrayList<>(dbs);
 	}
 }

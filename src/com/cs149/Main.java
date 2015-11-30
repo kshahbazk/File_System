@@ -30,7 +30,6 @@ public class Main {
 			unusedIndexBlocks.add(new IndexBlock(i));
 			unusedDataBlocks.add(proxyDisk.get(i));
 		}
-
 		prompt();
 	}
 
@@ -145,8 +144,9 @@ public class Main {
 		iblock.setDataBlocks(datablocks);
 		updateProxyDisk(datablocks);
 		map.put(file, iblock);
+		System.out.println(file);
 		
-		unusedDataBlocks.remove(0);
+		unusedIndexBlocks.remove(0);
 	}
 
 	/*
@@ -154,9 +154,10 @@ public class Main {
 	 * Benjamin Liu
 	 */
 	public static void extendf(String file, int size) {
-
+		if(map.containsKey(file)){
 		IndexBlock iblock = map.get(file);
 		ArrayList<DataBlock> datablocks = iblock.getDataBlocks();
+		
 		int amountOfBlocks = size / DataBlock.size;
 
 		for (int i = 0; i < amountOfBlocks; i++) {
@@ -171,6 +172,10 @@ public class Main {
 		iblock.setDataBlocks(datablocks);
 		updateProxyDisk(datablocks);
 		map.put(file, iblock);
+		
+		}else{
+			System.out.println("File not found");
+		}
 	}
 
 	/*
@@ -284,7 +289,7 @@ public class Main {
 
 	public static void listfb() {
 		for (int i = 0; i < unusedDataBlocks.size(); i++) {
-			System.out.println(unusedDataBlocks.get(i).getNumber() + " ");
+			System.out.println(unusedDataBlocks.get(i).getNumber());
 		}
 	}
 
@@ -328,7 +333,7 @@ public class Main {
 		while (sc.hasNextLine() && on) {
 
 			typing = sc.nextLine();
-
+			String[] input = typing.split("\\s+");
 			// 1
 			if (typing.contains("currentd")) {
 				currentd();
@@ -337,88 +342,69 @@ public class Main {
 			// 2
 			else if (typing.contains("chdir")) {
 
-				int indexOfEmptyString = typing.indexOf(" ");
-				String command = typing.substring(indexOfEmptyString);
-				chdir(command);
+				chdir(input[1]);
 			}
 
 			// 3
 			else if (typing.contains("maked")) {
-				int indexOfEmptyString = typing.indexOf(" ");
-				String command = typing.substring(indexOfEmptyString);
-				maked(command);
+
+				maked(input[1]);
 			}
 
 			// 4
 			else if (typing.contains("createf")) {
-				int indexOfEmptyString = typing.indexOf(" ");
-				String command = typing.substring(indexOfEmptyString);
-				createf(command);
+
+				createf(input[1]);
 			}
 
 			// 5
 			else if (typing.contains("extendf")) {
-				
-				String[] pp = typing.split("\\s+");
-				System.out.println(pp[1]);
-				int j = Integer.parseInt(pp[2]);
-				extendf(pp[1], j);
+
+				int j = Integer.parseInt(input[2]);
+				extendf(input[1], j);
 			}
 
 			// 6
 			else if (typing.contains("truncf")) {
-				int indexOfFirstEmptyString = typing.indexOf(" ");
-				String firstCommandLine = typing.substring(indexOfFirstEmptyString);
-				int indexOfSecondEmptyString = firstCommandLine.indexOf(" ");
-				String firstCommand = typing.substring(indexOfFirstEmptyString, indexOfSecondEmptyString);
-				String secondCommandStr = typing.substring(indexOfSecondEmptyString);
-				int secondCommand = Integer.parseInt(secondCommandStr);
 
-				truncf(firstCommand, secondCommand);
+				int j = Integer.parseInt(input[2]);
+
+				truncf(input[1], j);
 			}
 
 			// 7
 			else if (typing.contains("deletefd")) {
-				int indexOfEmptyString = typing.indexOf(" ");
-				String command = typing.substring(indexOfEmptyString);
-				deletefd(command);
+
+				deletefd(input[1]);
+			}
+			
+			// 12
+			else if (typing.equals("listfb")) {
+				listfb();
 			}
 
 			// 8
 			else if (typing.contains("listd")) {
-				int indexOfEmptyString = typing.indexOf(" ");
-				String command = typing.substring(indexOfEmptyString);
-				listd(command);
+	
+				listd(input[1]);
 			}
 
 			// 9
 			else if (typing.contains("listf")) {
-				int indexOfEmptyString = typing.indexOf(" ");
-				String command = typing.substring(indexOfEmptyString);
-				listf(command);
+
+				listf(input[1]);
 			}
 
 			// 10
 			else if (typing.contains("sizef")) {
-				int indexOfEmptyString = typing.indexOf(" ");
-				String command = typing.substring(indexOfEmptyString);
-				sizef(command);
+
+				sizef(input[1]);
 			}
 
 			// 11
 			else if (typing.contains("movf")) {
-				int indexOfFirstEmptyString = typing.indexOf(" ");
-				String firstCommandLine = typing.substring(indexOfFirstEmptyString);
-				int indexOfSecondEmptyString = firstCommandLine.indexOf(" ");
-				String firstCommand = typing.substring(indexOfFirstEmptyString, indexOfSecondEmptyString);
-				String secondCommand = typing.substring(indexOfSecondEmptyString);
-
-				movf(firstCommand, secondCommand);
-			}
-
-			// 12
-			else if (typing.contains("listfb")) {
-				listfb();
+				
+				movf(input[1], input[2]);
 			}
 
 			// 13
