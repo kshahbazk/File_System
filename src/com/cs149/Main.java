@@ -262,11 +262,13 @@ public class Main {
 
 	/*
 	 * 12. listfb - list addresses (array index) if free blocks Implemented by
-	 * Shahbaz Khan
+	 * Benjamin Liu
 	 */
 
 	public static void listfb() {
-
+		for (int i = 0; i < unusedDataBlocks.size(); i++) {
+			System.out.println(unusedDataBlocks.get(i).getNumber() + " ");
+		}
 	}
 
 	/*
