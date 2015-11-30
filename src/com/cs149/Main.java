@@ -30,6 +30,7 @@ public class Main {
 		// Initialize our Proxy Disk
 		for (int i = 0; i < 100; i++) {
 			proxyDisk.add(new DataBlock(i));
+			unusedDataBlocks.add(proxyDisk.get(0));
 		}
 
 		prompt();
@@ -79,6 +80,8 @@ public class Main {
 
 	public static void createf(String file) {
 		
+		//TODO  add file to directory
+		
 		File f = new File(file);
 		f.setOwner(owner);
 		IndexBlock iblock = unusedIndexBlocks.get(0);
@@ -91,7 +94,7 @@ public class Main {
 			unusedDataBlocks.remove(i);
 		}
 		iblock.setDataBlocks(datablocks);
-		
+		updateProxyDisk(datablocks);
 		map.put(file, iblock);
 		
 		unusedDataBlocks.remove(0);
@@ -115,7 +118,7 @@ public class Main {
 		}
 
 		iblock.setDataBlocks(datablocks);
-
+		updateProxyDisk(datablocks);
 		map.put(file, iblock);
 	}
 
@@ -229,6 +232,14 @@ public class Main {
 		// DirOrFile root = new DirOrFile("root");
 		// current.addToDirectory(root);
 
+	}
+	
+	public static void updateProxyDisk(ArrayList<DataBlock> datablocks){
+		
+		for(int i = 0; i < datablocks.size();i++){
+			proxyDisk.set(datablocks.get(i).getNumber(), datablocks.get(i));
+		}
+		
 	}
 
 	public static void prompt() {
