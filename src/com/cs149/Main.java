@@ -193,7 +193,7 @@ public class Main {
 
                 datablocks.remove(i);
                 //Write to datablock
-                datablocks.get(i).setData(i);
+                datablocks.get(i).setData(DataBlock.size - size);
                 unusedDataBlocks.get(i);
 
             }
